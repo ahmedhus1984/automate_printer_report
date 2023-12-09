@@ -1,0 +1,14 @@
+sort all columns by date in ascending order
+
+delete off all the rows for 0 sheets and blank sheets
+
+create a new empty column before the input source column
+
+extract all the hostnames with SGSIN from the input source column and put into the empty column named hostname
+
+move the sheets column before the input source column, ie in between the newly created hostname column and the input source column
+
+create two more new and blank columns, user column and department column (in that sequence) and put them to the left of the recently shifted sheets column
+
+loop through both the laptop and printer sheets and try to see if hostname in printer sheet has a match in the laptop sheet. if it has, get the serial number from that row and loop through issuance sheet to see which user is the owner of the hostname. if there is a match for a user, then use that user's name to loop through department sheet. if there is a match, then from the department sheet, copy both the user and the department cells and paste it to the user and department cells in the printer report sheet. if there is no match, then paste null for both cells.
+
